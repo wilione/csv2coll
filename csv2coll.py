@@ -20,7 +20,7 @@ lines = [[0] + l for l in infile] #read the csv file into an array and create co
 for i in lines:
 	lines[index][columns] += ";" #adds semicolon to end of each line				
 	lines[index][0] = index #fill with index value
-	strindex = str(lines[index][0]) + "," # ar holds index as string, adds comma to end of each index as string
+	strindex = str(lines[index][0]) + "," #holds index as string, adds comma to end of each index as string
 	lines[index][0] = strindex #put the index strings back in the array
 	index +=1
 	
