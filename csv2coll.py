@@ -1,11 +1,19 @@
+#csv2coll by Andrew Willingham
+#updated 10/15/2012
+#www.wilhelmsound.com
+#http://github.com/wilione/csv2coll
+
 import csv
 
 index = 0;
-datalist = []
-inputfile = "INPUT FILE NAME.csv" #the name of the .csv file you want to convert
-outputfile = "OUTPUT FILE NAME.txt" #the desired name of the output file
-columns = 7; #number of columns in the .csv file
+inputfile = "INPUT FILENAME.csv" #the name of the .csv file you want to convert
+outputfile = "OUTPUT FILENAME.txt" #the desired name of the output file
 
+#calculate number of columns in .csv file
+columnstemp = csv.reader(open(inputfile, "rU"), dialect=csv.excel)
+columns = len(zip(*columnstemp))
+
+#read inputfile into array/index
 infile = csv.reader(open(inputfile, "rU"), dialect=csv.excel)
 lines = [[0] + l for l in infile] #read the csv file into an array and create column for index value
 
@@ -18,4 +26,4 @@ for i in lines:
 	
 with open(outputfile, mode="w") as outfile:
         writer = csv.writer(outfile, delimiter=' ')
-        writer.writerows(lines)	
+        writer.writerows(lines)
