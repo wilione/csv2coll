@@ -42,7 +42,7 @@ for files in glob.glob("*.csv"):
 		lines[index][0] = strindex #put the index strings back in the array
 		index +=1
 	#manually set the first line to ;
-	lines[0] = ";"
+	lines[0] = "0, ;"
 	#print lines[0]
 	
 #write text file with converted data
